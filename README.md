@@ -18,3 +18,44 @@ Calculate, for a given client, the total cost of their shopping cart, knowing th
 contain multiple quantities of each of the three products.
 
 Make sure to implement tests — failing to do so will result in disqualification
+
+Testing the application for IndividualClient and ProfessionalClient
+--------------------------------------------------------------------
+1.IndividualClient
+  POST URL:http://localhost:8080/api/cart/totals
+  Request Body:
+  {
+  "firstName": "Jitendra",
+  "lastName": "Mishra",
+  "companyName": "",
+  "vatNumber": "",
+  "registrationNumber": "",
+  "annualRevenue": 0,
+  "clientType": "individual",
+  "clientId": "ABCD01",
+  "quantities": {
+    "high_end_phone": 1,
+    "mid_range_phone": 1,
+    "laptop": 1
+  }
+}
+
+2.ProfessionalClient
+ POST URL:http://localhost:8080/api/cart/totals
+ Request Body: {
+  "firstName": "",
+  "lastName": "",
+  "companyName": "ABCD01",
+  "vatNumber": "123",
+  "registrationNumber": "AS3458N",
+  "annualRevenue": 100000000,
+  "clientType": "professional",
+  "clientId": "ABCD01",
+  "quantities": {
+    "high_end_phone": 1,
+    "mid_range_phone": 1,
+    "laptop": 1
+  }
+}
+
+Swagger URL:http://localhost:8080/swagger-ui/index.html#/
